@@ -1,12 +1,11 @@
 <div>
-  <div class="w-full px-8 py-2 border" head>
-    <img src="/assets/logo.svg" alt="" class="" />
+  <div class="w-full px-8 py-2 border flex items-center justify-between">
+    <a href="/"><img src="/assets/logo.svg" alt="" class="" /></a>
+    <ul>
+      <a href="/about" class="hover:underline font-bold text-xm">About</a>
+    </ul>
   </div>
-  <div body>
-    <div class="flex items-center justify-center p-8 border gap-5">
-      <input type="text"  class="border w-1/2 py-1 px-2" placeholder="Filter By City" /> 
-      <button class="border px-2 py-1 rounded hover:text-white hover:bg-black">Search</button>
-    </div>
-    <app-property-card-box></app-property-card-box>
+  <div>
+    <router-outlet></router-outlet>
   </div>
 </div>

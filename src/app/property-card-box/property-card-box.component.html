@@ -1,4 +1,14 @@
-<div class="grid grid-cols-3 ">
+<div class="flex items-center justify-center p-8 border gap-5">
+  <input
+    type="text"
+    class="border w-1/2 py-1 px-2"
+    placeholder="Filter By City"
+  />
+  <button class="border px-2 py-1 rounded hover:text-white hover:bg-black">
+    Search
+  </button>
+</div>
+<div class="grid grid-cols-3">
   <app-property-card
     *ngFor="let property of propertyCardList"
     [propertyCard]="property"

@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PropertyCardComponent } from './property-card/property-card.component';
 import { PropertyCardBoxComponent } from './property-card-box/property-card-box.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PropertyCardComponent,
-    PropertyCardBoxComponent
+    PropertyCardBoxComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
