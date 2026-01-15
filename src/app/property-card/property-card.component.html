@@ -1,0 +1,20 @@
+<div class="shadow flex flex-col items-center p-4 gap-2">
+  <p class="absolute text-gray-500">{{ propertyCard.id }}</p>
+  <div class="w-50 h-50">
+    <img
+      [src]="propertyCard.photo"
+      [alt]="'Image of property with name : ' + propertyCard.name"
+      class="w-full"
+    />
+  </div>
+  <div class="flex flex-col items-center justify-center">
+    <h2>{{ propertyCard.name }}</h2>
+    <p>
+      <img src="/assets/locationpin.svg" alt="" />{{ propertyCard.city }},
+      {{ propertyCard.state }}
+    </p>
+    <p>Units : {{ propertyCard.availableUnits }}</p>
+    <p>Wifi : {{ propertyCard.wifi }}</p>
+    <p>Laundry : {{ propertyCard.laundry }}</p>
+  </div>
+</div>
