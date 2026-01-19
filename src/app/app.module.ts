@@ -8,7 +8,7 @@ import { PropertyCardBoxComponent } from './property-card-box/property-card-box.
 import { AboutComponent } from './about/about.component';
 import { PropertyDetailsComponent } from './property-details/property-details.component';
 import { ApplyNowComponent } from './apply-now/apply-now.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApplyButtonComponent } from './apply-button/apply-button.component';
 
 @NgModule({
@@ -25,6 +25,7 @@ import { ApplyButtonComponent } from './apply-button/apply-button.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

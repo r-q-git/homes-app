@@ -12,7 +12,7 @@ import { PropertyServicesService } from 'src/utils/Services/property-services.se
 })
 export class PropertyDetailsComponent {
   protected id: number = 0;
-  protected countApply: number = 0;
+  countApply: number = 0;
   protected propertyCard: PropertyCard | undefined;
 
   protected activatedRoute: ActivatedRoute = inject(ActivatedRoute);
