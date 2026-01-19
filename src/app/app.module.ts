@@ -9,6 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { PropertyDetailsComponent } from './property-details/property-details.component';
 import { ApplyNowComponent } from './apply-now/apply-now.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ApplyButtonComponent } from './apply-button/apply-button.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AboutComponent,
     PropertyDetailsComponent,
     ApplyNowComponent,
+    ApplyButtonComponent,
   ],
   imports: [
     BrowserModule,

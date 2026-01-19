@@ -6,6 +6,7 @@ import { PropertyCard } from '../Interfaces/property-card';
 })
 export class PropertyServicesService {
   protected propertyList: PropertyCard[] = [];
+  public applyCount: number = 0;
   constructor() {
     this.propertyList = [
       {

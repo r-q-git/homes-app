@@ -1,11 +1,16 @@
 <div class="flex flex-col items-center justify-center">
-    <h2>{{ propertyCard?.name }}</h2>
-    <p>
-      <img src="/assets/locationpin.svg" alt="" />{{ propertyCard?.city }},
-      {{ propertyCard?.state }}
-    </p>
-    <p>Units : {{ propertyCard?.availableUnits }}</p>
-    <p>Wifi : {{ propertyCard?.wifi }}</p>
-    <p>Laundry : {{ propertyCard?.laundry }}</p>
-    <a [routerLink]="['/apply-now/', propertyCard?.id ]">Apply Now</a>
-  </div>
+  <h2>{{ propertyCard?.name }}</h2>
+  <p>
+    <img src="/assets/locationpin.svg" alt="" />{{ propertyCard?.city }},
+    {{ propertyCard?.state }}
+  </p>
+  <p>Units : {{ propertyCard?.availableUnits }}</p>
+  <p>Wifi : {{ propertyCard?.wifi }}</p>
+  <p>Laundry : {{ propertyCard?.laundry }}</p>
+  <p class="font-bold text-2xl">Applied Count : {{ countApply }}</p>
+  <!-- <a [routerLink]="['/apply-now/', propertyCard?.id]">Apply Now</a> -->
+  <app-apply-button
+    (applyCountOutput)="applyCountOutputEventHandler($event)"
+    [id]="propertyCard?.id || 0"
+  />
+</div>
