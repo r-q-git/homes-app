@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { PropertyCard } from '../../utils/Interfaces/property-card';
 import { PropertyServicesService } from 'src/utils/Services/property-services.service';
 
@@ -9,7 +9,8 @@ import { PropertyServicesService } from 'src/utils/Services/property-services.se
 })
 export class PropertyCardBoxComponent {
   propertyCardList: PropertyCard[] = [];
-  constructor(propertyService: PropertyServicesService) {
-    this.propertyCardList = propertyService.getPropertyList();
+  propertyService : PropertyServicesService = inject(PropertyServicesService);
+  constructor() {
+    this.propertyCardList = this.propertyService.getPropertyList(); 
   }
 }
