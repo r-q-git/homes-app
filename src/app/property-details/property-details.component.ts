@@ -16,14 +16,15 @@ export class PropertyDetailsComponent {
   protected propertyCard: PropertyCard | undefined;
 
   protected activatedRoute: ActivatedRoute = inject(ActivatedRoute);
-  constructor(propertyService: PropertyServicesService) {
+  propertyService: PropertyServicesService = inject(PropertyServicesService);
+  constructor() {
     // console.log(this.activatedRoute.snapshot.params); // params is an object.
     this.id = Number(this.activatedRoute.snapshot.params['id']);
-    this.propertyCard = propertyService.getPropertyById(this.id);
+    this.propertyCard = this.propertyService.getPropertyById(this.id);
   }
 
   applyCountOutputEventHandler(count: number) {
     console.log(count);
-    this.countApply = count;
+    this.propertyService.applyCountForPropertyDetails = count;
   }
 }
