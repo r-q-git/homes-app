@@ -1,18 +1,33 @@
-<div class="flex flex-col items-center justify-center">
-  <h2>{{ propertyCard?.name }}</h2>
-  <p>
+<div class="flex flex-col items-center justify-center gap-2 p-8">
+  <p class="font-bold text-xl">
+    Applied Count : {{ this.propertyService.applyCountForPropertyDetails }}
+  </p>
+  <div class="w-48 h-36">
+    <img
+      [src]="propertyCard?.photo"
+      [alt]="'Image of property with name : ' + propertyCard?.name"
+      class="w-full h-full"
+    />
+  </div>
+  <h2 class="text-xl font-semibold">{{ propertyCard?.name }}</h2>
+  <p class="flex items-center justify-center gap-1">
     <img src="/assets/locationpin.svg" alt="" />{{ propertyCard?.city }},
     {{ propertyCard?.state }}
   </p>
-  <p>Units : {{ propertyCard?.availableUnits }}</p>
-  <p>Wifi : {{ propertyCard?.wifi }}</p>
-  <p>Laundry : {{ propertyCard?.laundry }}</p>
+  <p>
+    Units :
+    {{
+      propertyCard?.availableUnits == 0
+        ? "Not Available"
+        : propertyCard?.availableUnits
+    }}
+  </p>
+  <p>Wifi : {{ propertyCard?.wifi ? "Yes" : "No" }}</p>
+  <p>Laundry : {{ propertyCard?.laundry ? "Yes" : "No" }}</p>
   <!-- <a [routerLink]="['/apply-now/', propertyCard?.id]">Apply Now</a> -->
-  <app-apply-button class="border px-2 py-1 rounded hover:text-white hover:bg-black"
+  <app-apply-button
+    class="border-2 border-black px-4 py-1 rounded hover:text-white hover:bg-black"
     (applyCountOutput)="applyCountOutputEventHandler($event)"
     [id]="propertyCard?.id || 0"
   />
-  <p class="font-bold text-2xl">
-    Applied Count : {{ this.propertyService.applyCountForPropertyDetails }}
-  </p>
 </div>

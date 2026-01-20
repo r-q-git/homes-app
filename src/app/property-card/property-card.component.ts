@@ -7,6 +7,7 @@ import { PropertyCard } from '../../utils/Interfaces/property-card';
   styleUrls: ['./property-card.component.css'],
 })
 export class PropertyCardComponent {
+  isLiked : boolean = false;
   @Input() propertyCard: PropertyCard = {
     id: -1,
     name: "",
@@ -20,4 +21,10 @@ export class PropertyCardComponent {
 
   // other way to write when we don't want to pass the value.
   // @Input() propertyCard!: PropertyCard;
+
+  handleLike(){
+    this.isLiked = !this.isLiked;
+  }
+
+
 }

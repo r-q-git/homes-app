@@ -1,22 +1,45 @@
 <div class="shadow flex flex-col items-center p-4 gap-2">
-  <p class="absolute text-gray-500">{{ propertyCard.id }}</p>
-  <div class="w-50 h-50">
+  <p class="text-gray-500">{{ propertyCard.id }}</p>
+  <div class="w-48 h-36">
     <img
       [src]="propertyCard.photo"
       [alt]="'Image of property with name : ' + propertyCard.name"
-      class="w-full"
+      class="w-full h-full"
     />
   </div>
-  <div class="flex flex-col items-center justify-center">
+  <div class="flex flex-col items-center justify-center gap-2">
     <h2>{{ propertyCard.name }}</h2>
-    <p>
+    <p class="flex items-center justify-center gap-1">
       <img src="/assets/locationpin.svg" alt="" />{{ propertyCard.city }},
       {{ propertyCard.state }}
     </p>
-    <p>Units : {{ propertyCard.availableUnits }}</p>
-    <p>Wifi : {{ propertyCard.wifi }}</p>
-    <p>Laundry : {{ propertyCard.laundry }}</p>
-    <a [routerLink]="['/details/', propertyCard.id]">Details</a>
-    <a [href]="'/details/' + propertyCard.id">Details</a>
+    <p>
+      Units :
+      {{
+        propertyCard.availableUnits == 0
+          ? "Not Available"
+          : propertyCard.availableUnits
+      }}
+    </p>
+    <p>Wifi : {{ propertyCard.wifi ? "Yes" : "No" }}</p>
+    <p>Laundry : {{ propertyCard.laundry ? "Yes" : "No" }}</p>
+    <button
+      [disabled]="isLiked"
+      (click)="handleLike()"
+      class="border px-2 py-1 text-white"
+      [ngClass]="{ 'bg-red-600': isLiked, 'bg-gray-500': !isLiked }"
+    >
+      {{ isLiked ? "Already Liked" : "Like Now" }}
+    </button>
+    <a
+      class="border-2 border-black px-2 py-1 rounded hover:text-white hover:bg-black"
+      [routerLink]="['/details/', propertyCard.id]"
+      >Details</a
+    >
+    <a
+      class="border-2 border-black px-2 py-1 rounded hover:text-white hover:bg-black"
+      [href]="'/details/' + propertyCard.id"
+      >Details</a
+    >
   </div>
 </div>
